@@ -35,9 +35,12 @@
         <div id="page-top">
         	<div ui-view="navbar"></div>
         	<div ui-view="content"></div>
+        	<span class="page-scroll">
+        		<a href="#page-top" class="cd-top page-scroll">Top</a>
+        	</span>
         	<div class="footer">
 				Copyright &copy; 2014 - 2015 Built by Ethan Anderson. All rights reserved.
-        	</div>
+        	</div>        	
         </div>         
 
         <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
@@ -145,6 +148,18 @@
 				$(".navbar-fixed-top").removeClass("top-nav-collapse");
 			}
 		});
+		
+		var offset = 300,
+		offset_opacity = 20000,
+		$back_to_top = $('.cd-top');
+
+		//hide or show the "back to top" link
+		$(window).scroll(function(){
+			( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+			if( $(this).scrollTop() > offset_opacity ) { 
+				$back_to_top.addClass('cd-fade-out');
+			}
+		});		
     </script>    
     
 </body>

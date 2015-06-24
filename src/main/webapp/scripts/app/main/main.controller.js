@@ -8,6 +8,16 @@ angular.module('ethanaaApp')
             $scope.isAuthenticated = Principal.isAuthenticated;
         });
         
+        $scope.age = getMyAge(new Date(1988, 5, 29));
+        
+        function getMyAge(birthday) {
+        	
+            var ageDiff = Date.now() - birthday.getTime();
+            var ageDate = new Date(ageDiff);            
+            
+            return Math.abs(ageDate.getUTCFullYear() - 1969);        	
+        }
+        
 		// jQuery for page scrolling feature - requires jQuery Easing plugin
 		$('.page-scroll a').bind('click', function(event) {
 			var $anchor = $(this);
