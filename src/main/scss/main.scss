@@ -851,6 +851,31 @@ HOBBIES
   color: #ccc;
 }
 /*******************************************
+Downloads
+*******************************************/
+.download{
+  color: #fff;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 5px 5px 5px 25px;
+  background: #3B7765;
+  position: relative;
+  font-size: 1.2em;
+}
+.download:before{
+  content: "\f019";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  position: absolute;
+  top: 6px;
+  left: 7px;
+}
+.download:hover {
+  color: #ccc;
+}
+/*******************************************
 MEDIA
 *******************************************/
 @media (min-width: 500px) {
