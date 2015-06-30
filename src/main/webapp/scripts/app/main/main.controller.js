@@ -18,6 +18,9 @@ angular.module('ethanaaApp')
             return Math.abs(ageDate.getUTCFullYear() - 1970);        	
         }
         
+        var currentMonth = new Date().getMonth() + 1;
+        $scope.avatarNumber = currentMonth > 4 && currentMonth < 10 ? 5 : 4;
+        
 		// jQuery for page scrolling feature - requires jQuery Easing plugin
 		$('.page-scroll a').bind('click', function(event) {
 			var $anchor = $(this);
