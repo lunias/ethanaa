@@ -84,6 +84,8 @@ angular.module('ethanaaApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pascal
         //Cache everything except rest api requests
         httpRequestInterceptorCacheBusterProvider.setMatchlist([/.*api.*/, /.*protected.*/], true);
 
+        $locationProvider.html5Mode(true);
+        
         $urlRouterProvider.otherwise('/');
         $stateProvider.state('site', {
             'abstract': true,

@@ -18,6 +18,7 @@
         <!-- build:css assets/styles/main.css -->
         <link rel="stylesheet" href="assets/styles/main.css" media="screen">
         <!-- endbuild -->
+        <base href="/">
     </head>
     <body ng-app="ethanaaApp" data-spy="scroll" data-target="#navbar" data-offset="0">
     
@@ -28,6 +29,11 @@
         <div id="page-top">
         	<div ui-view="navbar"></div>
         	<div ui-view="content"></div>
+			<div class="page-scroll" ng-hide="ctrl.hideArrow" ng-controller="NavbarController as ctrl">
+				<a href="#resume">
+        			<span class="arrow" ng-class="{'bounce': ctrl.bounceArrow}"></span>		
+        		</a>
+        	</div>        	
         	<span class="page-scroll">
         		<a href="#page-top" class="cd-top page-scroll">Top</a>
         	</span>

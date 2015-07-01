@@ -19,23 +19,54 @@ angular.module('ethanaaApp')
         }
         
         var currentMonth = new Date().getMonth() + 1;
-        $scope.avatarNumber = currentMonth > 4 && currentMonth < 10 ? 5 : 4;
+        $scope.avatarNumber = currentMonth > 4 && currentMonth < 10 ? 5 : 4;        
         
-		// jQuery for page scrolling feature - requires jQuery Easing plugin
 		$('.page-scroll a').bind('click', function(event) {
 			var $anchor = $(this);
 			$('html, body').stop().animate({
 				scrollTop : $($anchor.attr('href')).offset().top
 			}, 1200, 'easeInOutExpo');
 			event.preventDefault();			
-		});
+		});		
 
 		$('#navbar').on('activate.bs.scrollspy', function () {
+			
 			var activeSection = $(".nav li.active > a").attr('href');
+			var hideArrow = true;
+			var bounceArrow = false;
+			
+			var scope = angular.element($('#navbar')).scope();			
+			
 			if (activeSection === '#resume') {
+				
 				resizeFn(200);
+				
+			} else if (activeSection === '#about') {
+				
+				hideArrow = false;				
+		        bounceArrow = true;
+		        setTimeout(function() {
+		        	bounceArrow = false;
+		        }, 5000)
+		        
+			} else {				
+				hideArrow = true;
 			}
-		});		
+			
+			scope.$apply(function () {
+				scope.hideArrow = hideArrow;
+				scope.bounceArrow = bounceArrow;
+				console.log('hide: ' + scope.hideArrow + ' bounce: ' + scope.bounceArrow);
+			});
+		});
+		
+		$(function() {
+		    $('.nav a').on('click', function(){ 
+		        if($('.navbar-toggle').css('display') !='none'){
+		            $(".navbar-toggle").trigger( "click" );
+		        }
+		    });
+		});	
 		
 		var callback = function() {	
 			
