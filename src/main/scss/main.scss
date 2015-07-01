@@ -48,23 +48,6 @@ p {
     padding: 0.2em 0;
 }
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
-    background-color: #eee;
-    border-radius: 6px;
-    padding: 60px;
-}
-
-.hero-unit h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-}
-
 .error {
     color: white;
     background-color: red;
@@ -74,30 +57,6 @@ p {
 a:hover {
   cursor: pointer;
 }
-
-
-/* start Password strength bar style */
-ul#strength {
-    display:inline;
-    list-style:none;
-    margin:0;
-    margin-left:15px;
-    padding:0;
-    vertical-align:2px;
-}
-
-.point:last {
-    margin:0 !important;
-}
-.point {
-    background:#DDD;
-    border-radius:2px;
-    display:inline-block;
-    height:5px;
-    margin-right:1px;
-    width:20px;
-}
-/* end Password strength bar style */
 
 .light {
     font-weight: 400;
@@ -265,7 +224,7 @@ ul#strength {
 
 .vertical-center {
     min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-    min-height: 100vh; /* These two lines are counted as one :-)       */
+    min-height: 100vh;
 
     display: flex;
     align-items: center;
