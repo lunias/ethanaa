@@ -1,0 +1,88 @@
+<!doctype html>
+<html class="no-js">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>ethanaa</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="http://www.ethanaa.com/favicon.ico" />
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css" media="screen">
+    <base href="/">
+  </head>
+
+  <body ng-app="ethanaaApp" data-spy="scroll" data-target="#navbar" data-offset="0">    
+    
+    <div id="page-top">
+      <div ui-view="navbar"></div>
+      <div ui-view="content"></div>        	
+      <span class="page-scroll">
+        <a href="#page-top" class="cd-top page-scroll">Top</a>
+      </span>
+      <div class="footer">
+		Copyright &copy; 2014 - 2016 Built by Ethan Anderson. All rights reserved.
+      </div>        	
+    </div>         
+    
+    <script
+       src="https://code.jquery.com/jquery-3.1.1.min.js"
+       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+       crossorigin="anonymous"></script>
+    <script 
+       src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" 
+       integrity="sha256-rD86dXv7/J2SvI9ebmNi5dSuQdvzzrrN2puPca/ILls=" 
+       crossorigin="anonymous"></script>    
+    <script
+       src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+       integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+       crossorigin="anonymous"></script>
+    <script
+       src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0-rc.2/angular.min.js"
+       integrity="sha256-6uZpRnW9ILKM059f3TEC7SCJ4iiXb0kHfsQfL0JkpUc=" 
+       crossorigin="anonymous"></script>
+    <script 
+       src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js" 
+       integrity="sha256-jUHgsHoPXAh7OyogDZWIrwTF8PXRiRg+mdxod+c295k=" 
+       crossorigin="anonymous"></script>
+    <script 
+       src="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.3.0/ng-infinite-scroll.min.js" 
+       integrity="sha256-nUL1iPqMsX6n0f19hNGgkMsUgqQmP5k8PUWbDc1R/jU=" 
+       crossorigin="anonymous"></script>
+
+    <script src="scripts/app/app.js"></script>
+    <script src="scripts/app/app.constants.js"></script>
+    <script src="scripts/components/navbar/navbar.directive.js"></script>
+    <script src="scripts/components/navbar/navbar.controller.js"></script>
+    <script src="scripts/app/main/main.js"></script>
+    <script src="scripts/app/main/main.controller.js"></script>
+    
+    <script>
+    //jQuery to collapse the navbar on scroll
+    $(window).scroll(function() {
+	if ($(".navbar").offset().top > 50) {
+	    $(".navbar-fixed-top").addClass("top-nav-collapse");
+	} else {
+	    $(".navbar-fixed-top").removeClass("top-nav-collapse");
+	}
+    });
+
+    var offset = 300,
+    offset_opacity = 20000,
+    $back_to_top = $('.cd-top');
+
+    //hide or show the "back to top" link
+    $(window).scroll(function(){
+        ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+        if( $(this).scrollTop() > offset_opacity ) { 
+	    $back_to_top.addClass('cd-fade-out');
+        }
+    });		
+    </script>    
+
+  </body>
+</html>
